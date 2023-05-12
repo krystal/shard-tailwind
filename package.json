@@ -1,0 +1,17 @@
+{
+  "author": "Krystal",
+  "dependencies": {
+    "tailwindcss": "^3"
+  },
+  "files": [
+    "./*.js"
+  ],
+  "main": "index.js",
+  "name": "@krystal/tailwind",
+  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "scope": "@krystal"
+  },
+  "version": "0.0.1"
+}
