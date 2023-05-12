@@ -15,20 +15,16 @@ const plugin = withOptions(
 
       if (!shardPath) {
         console.log("Using without Shard as it's not installed");
+        return;
       }
 
-      const paths = shardPath
-        ? JSON.parse(
-            fs.readFileSync(
-              path.join(shardPath, "static", "paths.json"),
-              "utf8"
-            )
-          )
-        : [];
+      const paths = shardPathJSON.parse(
+        fs.readFileSync(path.join(shardPath, "static", "paths.json"), "utf8")
+      );
 
       const { files } = config("content");
 
-      paths.forEach((file) => files.push(file));
+      paths.forEach((file) => files.push(path.join(shardPath, file)));
     };
   },
   function () {
