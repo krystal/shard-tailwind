@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/krystal/shard-tailwind/compare/v0.0.2...v0.0.3) (2023-05-12)
+
+
+### Bug Fixes
+
+* release me please ([c884d2f](https://github.com/krystal/shard-tailwind/commit/c884d2f565497e7144af77dfbdc6ba9d03af3f5c))
+
 ## [0.0.2](https://github.com/krystal/shard-tailwind/compare/v0.0.1...v0.0.2) (2023-05-12)
 
 
