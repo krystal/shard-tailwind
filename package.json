@@ -4,10 +4,10 @@
     "tailwindcss": "^3"
   },
   "files": [
-    "./*.js"
+    "./src/**/*.js"
   ],
   "main": "index.js",
-  "name": "@krystal/tailwind",
+  "name": "@krystal/shard-tailwind",
   "private": true,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
