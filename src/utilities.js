@@ -1,4 +1,11 @@
+const fs = require("fs");
+const path = require("path");
 const { execSync } = require("child_process");
+
+const getShardContentPaths = (directory) =>
+  JSON.parse(
+    fs.readFileSync(path.join(directory, "static", "paths.json"), "utf8")
+  );
 
 const getShardPath = () =>
   execSync(
@@ -9,5 +16,6 @@ const getShardPath = () =>
   ).trim();
 
 module.exports = {
+  getShardContentPaths,
   getShardPath,
 };

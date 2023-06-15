@@ -1,7 +1,6 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const fs = require("fs");
 const path = require("path");
-const { getContentPaths, getPath } = require("./utilities");
+const { getShardContentPaths, getShardPath } = require("./utilities");
 const { withOptions } = require("tailwindcss/plugin");
 
 // TODO: Apply `flex flex-col` to the body
@@ -18,13 +17,13 @@ const plugin = withOptions(
         return;
       }
 
-      const paths = shardPathJSON.parse(
-        fs.readFileSync(path.join(shardPath, "static", "paths.json"), "utf8")
-      );
+      const paths = getShardContentPaths(shardPath);
 
       const { files } = config("content");
 
       paths.forEach((file) => files.push(path.join(shardPath, file)));
+
+      console.log(files);
     };
   },
   function () {
