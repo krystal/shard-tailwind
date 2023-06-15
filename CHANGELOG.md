@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/krystal/shard-tailwind/compare/v0.0.3...v0.0.4) (2023-06-15)
+
+
+### Bug Fixes
+
+* appending paths ([acc4d07](https://github.com/krystal/shard-tailwind/commit/acc4d07660ff6fd96dc7ba6f7bbdf8eca2b1726f))
+
 ## [0.0.3](https://github.com/krystal/shard-tailwind/compare/v0.0.2...v0.0.3) (2023-05-12)
 
 
