@@ -22,8 +22,6 @@ const plugin = withOptions(
       const { files } = config("content");
 
       paths.forEach((file) => files.push(path.join(shardPath, file)));
-
-      console.log(files);
     };
   },
   function () {
