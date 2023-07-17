@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/krystal/shard-tailwind/compare/v0.0.4...v0.0.5) (2023-07-17)
+
+
+### Bug Fixes
+
+* unnecessarily logging list of files ([362bde1](https://github.com/krystal/shard-tailwind/commit/362bde1a5e2f4344bf04b830e9a23619afd66ce4))
+
 ## [0.0.4](https://github.com/krystal/shard-tailwind/compare/v0.0.3...v0.0.4) (2023-06-15)
 
 
