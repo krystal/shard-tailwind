@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.6](https://github.com/krystal/shard-tailwind/compare/v0.0.5...v0.0.6) (2023-08-07)
+
+
+### Features
+
+* change default line height for sm text ([d91978f](https://github.com/krystal/shard-tailwind/commit/d91978fa678688d58055eaa8cc0a29e88aee541e))
+
 ## [0.0.5](https://github.com/krystal/shard-tailwind/compare/v0.0.4...v0.0.5) (2023-07-17)
 
 
