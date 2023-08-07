@@ -59,6 +59,12 @@ const plugin = withOptions(
               lineHeight: "1.125rem",
             },
           ],
+          sm: [
+            "0.875rem",
+            {
+              lineHeight: "1.5rem",
+            },
+          ],
           "h-xs": [
             "1.25rem",
             {
