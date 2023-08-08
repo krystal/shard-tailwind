@@ -1,30 +1,55 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
 const path = require("path");
-const { getShardContentPaths, getShardPath } = require("./utilities");
+const tailwindColors = require("tailwindcss/colors");
+const tailwindDefaultTheme = require("tailwindcss/defaultTheme");
 const { withOptions } = require("tailwindcss/plugin");
 
-// TODO: Apply `flex flex-col` to the body
-
 const colors = require("./colors");
+const { getShardContentPaths, getShardPath } = require("./utilities");
+
+const TAILWIND_DEPRECATED_COLORS = Object.freeze([
+  "blueGray",
+  "coolGray",
+  "lightBlue",
+  "trueGray",
+  "warmGray",
+]);
 
 const plugin = withOptions(
   function (options = {}) {
-    return function ({ config, ...others }) {
-      const shardPath = options.path || getShardPath() || null;
+    const shardPath = options.path ?? getShardPath();
 
-      if (!shardPath) {
-        console.log("Using without Shard as it's not installed");
-        return;
-      }
+    if (!shardPath) {
+      throw new Error("Shard is not installed");
+    }
 
+    return function ({ config }) {
       const paths = getShardContentPaths(shardPath);
-
       const { files } = config("content");
 
       paths.forEach((file) => files.push(path.join(shardPath, file)));
     };
   },
-  function () {
+  function (options = {}) {
+    const defaultColors = options.defaultColors ?? false;
+    const primaryColor = options.primaryColor ?? "indigo";
+
+    const colorsObject = {
+      ...(defaultColors
+        ? Object.keys(tailwindColors).reduce(
+            (object, key) =>
+              TAILWIND_DEPRECATED_COLORS.includes(key)
+                ? object
+                : {
+                    ...object,
+                    [key]: tailwindColors[key],
+                  },
+            {}
+          )
+        : {}),
+      ...colors,
+      primary: colors[primaryColor],
+    };
+
     return {
       safelist: [
         {
@@ -41,15 +66,12 @@ const plugin = withOptions(
         },
       ],
       theme: {
-        colors: {
-          ...colors,
-          primary: colors.indigo,
-        },
+        colors: colorsObject,
         fontSize: {
           ...["sm", "base", "lg"].reduce(
             (object, size) => ({
               ...object,
-              [size]: defaultTheme.fontSize[size],
+              [size]: tailwindDefaultTheme.fontSize[size],
             }),
             {}
           ),
