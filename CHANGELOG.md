@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.7](https://github.com/krystal/shard-tailwind/compare/v0.0.6...v0.0.7) (2023-08-08)
+
+
+### Features
+
+* add options for colors ([7daa0f9](https://github.com/krystal/shard-tailwind/commit/7daa0f9d86f78e94f26ce49c8df6f1f28be4ba91))
+
 ## [0.0.6](https://github.com/krystal/shard-tailwind/compare/v0.0.5...v0.0.6) (2023-08-07)
 
 
