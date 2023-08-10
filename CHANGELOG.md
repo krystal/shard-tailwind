@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.8](https://github.com/krystal/shard-tailwind/compare/v0.0.7...v0.0.8) (2023-08-10)
+
+
+### Features
+
+* publish to npm ([0aa7bf0](https://github.com/krystal/shard-tailwind/commit/0aa7bf0ad2a9ade2b3512280774d0b03fa081e0b))
+
 ## [0.0.7](https://github.com/krystal/shard-tailwind/compare/v0.0.6...v0.0.7) (2023-08-08)
 
 
