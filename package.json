@@ -7,11 +7,7 @@
     "./src/**/*.js"
   ],
   "main": "src/index.js",
-  "name": "@krystal/shard-tailwind",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "scope": "@krystal"
-  },
+  "name": "krystal-shard-tailwind",
   "repository": {
     "type": "git",
     "url": "https://github.com/krystal/shard-tailwind.git"
