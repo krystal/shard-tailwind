@@ -15,7 +15,23 @@ const getShardPath = () =>
     }
   ).trim();
 
+const prefixKey = (key, prefix) => [prefix, titleize(key)].join("");
+
+const prefixKeys = (palettes, prefix) =>
+  palettes.reduce((o, [k, v]) => {
+    return {
+      ...o,
+      [prefixedKey(k, prefix)]: v,
+    };
+  }, {});
+
+const titleize = (string) =>
+  `${string.slice(0, 1).toUpperCase()}${string.slice(1)}`;
+
 module.exports = {
   getShardContentPaths,
   getShardPath,
+  prefixKey,
+  prefixKeys,
+  titleize,
 };

@@ -1,9 +1,9 @@
 const path = require("path");
 const tailwindColors = require("tailwindcss/colors");
-const tailwindDefaultTheme = require("tailwindcss/defaultTheme");
 const { withOptions } = require("tailwindcss/plugin");
 
 const colors = require("./colors");
+const typography = require("./typography");
 const { getShardContentPaths, getShardPath } = require("./utilities");
 
 const TAILWIND_DEPRECATED_COLORS = Object.freeze([
@@ -31,7 +31,7 @@ const plugin = withOptions(
   },
   function (options = {}) {
     const defaultColors = options.defaultColors ?? false;
-    const primaryColor = options.primaryColor ?? "indigo";
+    const primaryColor = options.primaryColor ?? "carbon";
 
     const colorsObject = {
       ...(defaultColors
@@ -47,6 +47,7 @@ const plugin = withOptions(
           )
         : {}),
       ...colors,
+      gray: colors.carbon,
       primary: colors[primaryColor],
     };
 
@@ -67,66 +68,7 @@ const plugin = withOptions(
       ],
       theme: {
         colors: colorsObject,
-        fontSize: {
-          ...["sm", "base", "lg"].reduce(
-            (object, size) => ({
-              ...object,
-              [size]: tailwindDefaultTheme.fontSize[size],
-            }),
-            {}
-          ),
-          xs: [
-            "0.75rem",
-            {
-              lineHeight: "1.125rem",
-            },
-          ],
-          sm: [
-            "0.875rem",
-            {
-              lineHeight: "1.5rem",
-            },
-          ],
-          "h-xs": [
-            "1.25rem",
-            {
-              lineHeight: "1.75rem",
-            },
-          ],
-          "h-sm": [
-            "1.5rem",
-            {
-              lineHeight: "2rem",
-            },
-          ],
-          "h-md": [
-            "1.875rem",
-            {
-              lineHeight: "2.375rem",
-            },
-          ],
-          "h-lg": [
-            "2.25rem",
-            {
-              letterSpacing: "-0.02em",
-              lineHeight: "2.75rem",
-            },
-          ],
-          "h-xl": [
-            "3rem",
-            {
-              letterSpacing: "-0.02em",
-              lineHeight: "3.75rem",
-            },
-          ],
-          "h-2xl": [
-            "3.75rem",
-            {
-              letterSpacing: "-0.02em",
-              lineHeight: "4.5rem",
-            },
-          ],
-        },
+        fontSize: typography,
         extend: {
           spacing: {
             4.5: "1.125.rem",
