@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.9](https://github.com/krystal/shard-tailwind/compare/v0.0.8...v0.0.9) (2023-10-24)
+
+
+### Features
+
+* rebrand ([4776561](https://github.com/krystal/shard-tailwind/commit/47765611de86d0bdc9d3d4f0b49590392b0b9f02))
+
 ## [0.0.8](https://github.com/krystal/shard-tailwind/compare/v0.0.7...v0.0.8) (2023-08-10)
 
 
