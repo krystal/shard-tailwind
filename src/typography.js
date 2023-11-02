@@ -22,42 +22,42 @@ module.exports = {
   ],
   md: fontSize.base,
   "h-xs": [
-    "1.25rem",
-    {
-      lineHeight: "1.75rem",
-    },
-  ],
-  "h-sm": [
     "1.5rem",
     {
       lineHeight: "2rem",
     },
   ],
-  "h-md": [
+  "h-sm": [
     "1.875rem",
     {
       lineHeight: "2.375rem",
     },
   ],
-  "h-lg": [
+  "h-md": [
     "2.25rem",
     {
-      letterSpacing: "-0.02em",
       lineHeight: "2.75rem",
     },
   ],
-  "h-xl": [
+  "h-lg": [
     "3rem",
     {
       letterSpacing: "-0.02em",
       lineHeight: "3.75rem",
     },
   ],
-  "h-2xl": [
+  "h-xl": [
     "3.75rem",
     {
       letterSpacing: "-0.02em",
       lineHeight: "4.5rem",
+    },
+  ],
+  "h-2xl": [
+    "4.5rem",
+    {
+      letterSpacing: "-0.02em",
+      lineHeight: "5.625rem",
     },
   ],
 };
