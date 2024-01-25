@@ -31,6 +31,7 @@ const plugin = withOptions(
   },
   function (options = {}) {
     const defaultColors = options.defaultColors ?? false;
+    const customColors = options.customColors ?? {};
     const primaryColor = options.primaryColor ?? "carbon";
 
     const colorsObject = {
@@ -47,8 +48,9 @@ const plugin = withOptions(
           )
         : {}),
       ...colors,
+      ...customColors,
       gray: colors.carbon,
-      primary: colors[primaryColor],
+      primary: colors[primaryColor] ?? customColors[primaryColor],
     };
 
     return {
