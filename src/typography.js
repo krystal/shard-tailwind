@@ -1,26 +1,6 @@
 const { fontSize } = require("tailwindcss/defaultTheme");
 
-module.exports = {
-  ...["sm", "base", "lg"].reduce(
-    (object, size) => ({
-      ...object,
-      [size]: fontSize[size],
-    }),
-    {}
-  ),
-  xs: [
-    "0.75rem",
-    {
-      lineHeight: "1.125rem",
-    },
-  ],
-  sm: [
-    "0.875rem",
-    {
-      lineHeight: "1.5rem",
-    },
-  ],
-  md: fontSize.base,
+const customHeadingFontSizes = {
   "h-xs": [
     "1.5rem",
     {
@@ -60,4 +40,32 @@ module.exports = {
       lineHeight: "5.625rem",
     },
   ],
+};
+
+const customStandardFontSizes = {
+  xs: [
+    "0.75rem",
+    {
+      lineHeight: "1.125rem",
+    },
+  ],
+  sm: [
+    "0.875rem",
+    {
+      lineHeight: "1.5rem",
+    },
+  ],
+  md: fontSize.base,
+};
+
+module.exports = {
+  ...["sm", "base", "lg"].reduce(
+    (object, size) => ({
+      ...object,
+      [size]: fontSize[size],
+    }),
+    {}
+  ),
+  ...customStandardFontSizes,
+  ...customHeadingFontSizes,
 };
