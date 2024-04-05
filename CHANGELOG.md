@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.0](https://github.com/krystal/shard-tailwind/compare/v0.0.9...v0.1.0) (2024-04-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* improved plugin options ([#11](https://github.com/krystal/shard-tailwind/issues/11))
+
+### Features
+
+* improved plugin options ([#11](https://github.com/krystal/shard-tailwind/issues/11)) ([8dddd74](https://github.com/krystal/shard-tailwind/commit/8dddd7441886af11b4d38843483d34b691121cf1))
+
 ## [0.0.9](https://github.com/krystal/shard-tailwind/compare/v0.0.8...v0.0.9) (2023-10-24)
 
 
