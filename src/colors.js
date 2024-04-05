@@ -1,3 +1,4 @@
+const tailwindColors = require("tailwindcss/colors");
 // const { prefixKeys } = require("./utilities");
 
 const base = {
@@ -6,6 +7,14 @@ const base = {
   transparent: "transparent",
   white: "#ffffff",
 };
+
+const deprecated = [
+  "blueGray",
+  "coolGray",
+  "lightBlue",
+  "trueGray",
+  "warmGray",
+];
 
 const grays = {
   blue: {
@@ -307,11 +316,40 @@ const states = {
   },
 };
 
-module.exports = {
+const colors = {
   ...base,
   // ...prefixKeys(grays, "gray"),
   // ...prefixKeys(krystal, "krystal"),
   ...primary,
   // ...secondary,
   ...states,
+};
+
+module.exports = (options = {}) => {
+  const custom = options.custom ?? {};
+  const defaults = {
+    gray: "carbon",
+    primary: "carbon",
+    ...(options.defaults ?? {}),
+  };
+  const tailwind = options.tailwind ?? false;
+
+  const gray = defaults.gray ?? "carbon";
+  const primary = defaults.primary ?? "carbon";
+
+  const palette = { ...colors, ...custom };
+
+  if (tailwind) {
+    for (const key of Object.keys(tailwindColors)) {
+      if (!palette[key] && !deprecated.includes(key)) {
+        palette[key] = tailwindColors[key];
+      }
+    }
+  }
+
+  return {
+    ...palette,
+    gray: palette[gray],
+    primary: palette[primary],
+  };
 };

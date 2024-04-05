@@ -1,57 +1,47 @@
+const fs = require("fs");
 const path = require("path");
-const tailwindColors = require("tailwindcss/colors");
 const { withOptions } = require("tailwindcss/plugin");
 
 const colors = require("./colors");
+const extensions = require("./extensions");
 const typography = require("./typography");
-const { getShardContentPaths, getShardPath } = require("./utilities");
 
-const TAILWIND_DEPRECATED_COLORS = Object.freeze([
-  "blueGray",
-  "coolGray",
-  "lightBlue",
-  "trueGray",
-  "warmGray",
-]);
+const { getShardPath, getShardStaticContentPaths } = require("./utilities");
+
+const defaultPaletteOutputPath = path.join(
+  process.cwd(),
+  "config",
+  "colors.json"
+);
 
 const plugin = withOptions(
   function (options = {}) {
-    const shardPath = options.path ?? getShardPath();
+    const paths = options.paths ?? {};
 
-    if (!shardPath) {
+    const shard = paths.shard ?? getShardPath();
+
+    if (!shard) {
       throw new Error("Shard is not installed");
     }
 
     return function ({ config }) {
-      const paths = getShardContentPaths(shardPath);
+      const paths = getShardStaticContentPaths(shard);
       const { files } = config("content");
 
-      paths.forEach((file) => files.push(path.join(shardPath, file)));
+      paths.forEach((file) => files.push(path.join(shard, file)));
     };
   },
   function (options = {}) {
-    const defaultColors = options.defaultColors ?? false;
-    const primaryColor = options.primaryColor ?? "carbon";
+    const paths = options.paths ?? {};
+    const json = paths.json ?? defaultPaletteOutputPath;
+    const palette = colors(options.colors);
 
-    const colorsObject = {
-      ...(defaultColors
-        ? Object.keys(tailwindColors).reduce(
-            (object, key) =>
-              TAILWIND_DEPRECATED_COLORS.includes(key)
-                ? object
-                : {
-                    ...object,
-                    [key]: tailwindColors[key],
-                  },
-            {}
-          )
-        : {}),
-      ...colors,
-      gray: colors.carbon,
-      primary: colors[primaryColor],
-    };
+    if (json) {
+      fs.writeFileSync(json, JSON.stringify(palette, null, 2), "utf-8");
+    }
 
     return {
+      // TODO: Custom extraction logic so a magic comment can be used instead inside templates
       safelist: [
         {
           pattern: /bg-+/,
@@ -67,12 +57,10 @@ const plugin = withOptions(
         },
       ],
       theme: {
-        colors: colorsObject,
+        colors: palette,
         fontSize: typography,
         extend: {
-          spacing: {
-            4.5: "1.125.rem",
-          },
+          ...extensions,
         },
       },
     };
