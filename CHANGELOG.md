@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.11](https://github.com/krystal/shard-tailwind/compare/v0.0.9...v0.0.11) (2024-06-04)
+
+
+### Bug Fixes
+
+* safelist ([415dc61](https://github.com/krystal/shard-tailwind/commit/415dc61d54fdfa5a89e117dd874cea6d598b9cae))
+
 ## [0.0.9](https://github.com/krystal/shard-tailwind/compare/v0.0.8...v0.0.9) (2023-10-24)
 
 
