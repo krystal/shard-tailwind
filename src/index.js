@@ -53,17 +53,15 @@ const plugin = withOptions(
 
     return {
       safelist: [
+        "bg-gray-100",
         {
-          pattern: /bg-+/,
+          pattern: /^bg-\w+-(50|500)$/,
         },
         {
-          pattern: /border-+/,
+          pattern: /^border-\w+-(600)$/,
         },
         {
-          pattern: /grid-cols-+/,
-        },
-        {
-          pattern: /text-+/,
+          pattern: /^text-\w+-(600|700)$/,
         },
       ],
       theme: {

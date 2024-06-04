@@ -4,7 +4,7 @@ jobs:
   release-please:
     name: Release Please
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/fix-safelist'
     outputs:
       release_created: ${{ steps.release-please.outputs.release_created }}
       tag_name: ${{ steps.release-please.outputs.tag_name }} # e.g. v1.0.0
@@ -21,6 +21,7 @@ jobs:
         with:
           token: ${{ steps.generate-github-token.outputs.token }}
           command: manifest
+          default-branch: fix-safelist
 
   release-npm:
     name: Release NPM Package
