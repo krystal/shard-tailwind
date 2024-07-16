@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/krystal/shard-tailwind/compare/v0.1.1...v0.1.2) (2024-07-16)
+
+
+### Features
+
+* Update class safelist for darkmode support ([98a8a1a](https://github.com/krystal/shard-tailwind/commit/98a8a1a4cb9b2268252945a00355bd8592ff687f))
+
 ## [0.1.1](https://github.com/krystal/shard-tailwind/compare/v0.1.0...v0.1.1) (2024-06-04)
 
 
