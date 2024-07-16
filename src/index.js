@@ -42,15 +42,53 @@ const plugin = withOptions(
 
     return {
       safelist: [
+        // For the Badge component
         "bg-gray-100",
+        "dark:bg-grayCool-800",
+
+        // 50 is for the Badge component
+        // 500 is for the Dot component
         {
           pattern: /^bg-\w+-(50|500)$/,
         },
+
+        // 400 is for the Dot component
+        // 900 is for the Badge component
         {
-          pattern: /^border-\w+-(600)$/,
+          pattern: /^bg-\w+-(400|900)$/,
+          variants: ["dark"],
         },
+
+        // For the Badge component
+        {
+          pattern: /^border-\w+-600$/,
+        },
+
+        // For the Badge component
+        {
+          pattern: /^border-\w+-300$/,
+          variants: ["dark"],
+        },
+
+        // 600 is for the Paragraph component
+        // 700 is for the Badge component
         {
           pattern: /^text-\w+-(600|700)$/,
+        },
+
+        // For the Paragraph component
+        {
+          pattern: /^text-\w+-(300)$/,
+          variants: ["dark"],
+        },
+
+        // For the Badge component
+        "dark:text-grayCool-200",
+
+        // For the Badge component
+        {
+          pattern: /^text-\w+-100$/,
+          variants: ["dark"],
         },
       ],
       theme: {
