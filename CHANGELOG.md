@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/krystal/shard-tailwind/compare/v0.1.2...v0.1.3) (2024-07-17)
+
+
+### Bug Fixes
+
+* Paragraph dark text is now shade 400, not 300 ([ff4f157](https://github.com/krystal/shard-tailwind/commit/ff4f15797a25df7df63629ff8988c6d8949847c6))
+
 ## [0.1.2](https://github.com/krystal/shard-tailwind/compare/v0.1.1...v0.1.2) (2024-07-16)
 
 
