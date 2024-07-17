@@ -78,7 +78,7 @@ const plugin = withOptions(
 
         // For the Paragraph component
         {
-          pattern: /^text-\w+-(300)$/,
+          pattern: /^text-\w+-(400)$/,
           variants: ["dark"],
         },
 
