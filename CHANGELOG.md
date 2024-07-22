@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/krystal/shard-tailwind/compare/v0.1.3...v0.1.4) (2024-07-22)
+
+
+### Features
+
+* Add 950 shade to error, warning and success ([f2bcd96](https://github.com/krystal/shard-tailwind/commit/f2bcd962b17c9db56eae369e3ed8c01ce6b1f82c))
+
 ## [0.1.3](https://github.com/krystal/shard-tailwind/compare/v0.1.2...v0.1.3) (2024-07-17)
 
 
