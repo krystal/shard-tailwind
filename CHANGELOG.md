@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/krystal/shard-tailwind/compare/v0.1.4...v0.1.5) (2024-07-29)
+
+
+### Features
+
+* expanded states color palette ([#26](https://github.com/krystal/shard-tailwind/issues/26)) ([4b2c11c](https://github.com/krystal/shard-tailwind/commit/4b2c11c714b4d2e53530d32e518d0c4f1a7ebf45))
+
 ## [0.1.4](https://github.com/krystal/shard-tailwind/compare/v0.1.3...v0.1.4) (2024-07-22)
 
 
