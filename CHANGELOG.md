@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/krystal/shard-tailwind/compare/v0.1.5...v0.1.6) (2024-08-12)
+
+
+### Features
+
+* add xs screen breakpoint ([302a299](https://github.com/krystal/shard-tailwind/commit/302a29955294ab6729d97a577de7725fdb52f0a0))
+
 ## [0.1.5](https://github.com/krystal/shard-tailwind/compare/v0.1.4...v0.1.5) (2024-07-29)
 
 
